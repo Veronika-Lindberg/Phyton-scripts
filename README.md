@@ -1,2 +1,2 @@
 # Python-scripts
-My pyhton scripts
+My python scripts
