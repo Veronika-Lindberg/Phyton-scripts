@@ -1,2 +1,2 @@
-# Phyton-scripts
-My phyton scripts
+# Python-scripts
+My pyhton scripts
