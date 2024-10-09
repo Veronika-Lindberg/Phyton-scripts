@@ -29,6 +29,19 @@ plt.axvline(x=1, color='grey', linestyle='--')
 # Expand x-axis limits
 plt.xlim(0, 2.5)
 
+# Add grid at 0.2 intervals on x-axis in grey
+plt.grid(axis='x', color='grey', linestyle='--', linewidth=0.5)
+plt.xticks(np.arange(0.2, 1.8, 0.2))
+
+# Ensure the x-axis spine is visible and set its color to black
+plt.gca().spines['bottom'].set_visible(True)
+plt.gca().spines['bottom'].set_color('black')
+
+# Remove the spines at x=0 and the last x-tick
+plt.gca().spines['left'].set_visible(False)
+plt.gca().spines['right'].set_visible(False)
+plt.gca().spines['top'].set_visible(False)
+
 # Labels and title
 plt.xlabel('Hazard Ratio')
 plt.title('Hazard Ratios for Various Characteristics in Stage IV Metastatic NSCLC')
@@ -40,9 +53,6 @@ for i in range(len(characteristics)):
 
 # Remove y-axis ticks and lines
 plt.tick_params(axis='y', which='both', left=False)
-
-# Remove the top line of the graph
-plt.gca().spines['top'].set_visible(False)
 
 # Save plot as an image file
 plt.savefig('hazard_ratio_plot.png', format='png')
