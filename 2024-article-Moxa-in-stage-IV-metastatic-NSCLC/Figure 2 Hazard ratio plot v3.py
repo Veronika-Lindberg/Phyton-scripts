@@ -72,8 +72,8 @@ for i in range(len(characteristics)):
 plt.tick_params(axis='y', which='both', left=False)
 
 # Save plot as an image file
-plt.savefig('hazard_ratio_plot2.png', format='png')
-plt.savefig('hazard_ratio_plot2.svg', format='svg')
+plt.savefig('hazard_ratio_plot3.png', format='png')
+plt.savefig('hazard_ratio_plot3.svg', format='svg')
 
  
 # Show plot

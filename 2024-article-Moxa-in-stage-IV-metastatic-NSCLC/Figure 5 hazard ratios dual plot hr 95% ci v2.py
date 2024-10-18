@@ -7,7 +7,6 @@ working_dir = r'C:\Users\veron\OneDrive\0-Writing-articles\GITHUB\public-python-
 # Change the current working directory
 os.chdir(working_dir)
 
-
 def create_forest_plot(ax, data, color, title):
     # Create y positions with reduced vertical space between categories
     y_positions = np.linspace(len(data), 1, len(data))  # Decreases the vertical space
@@ -37,6 +36,7 @@ def create_forest_plot(ax, data, color, title):
     # Remove y-axis labels, ticks, and spine
     ax.set_yticks([])  # Remove y-ticks
     ax.spines['left'].set_visible(False)  # Hide the left spine (y-axis line)
+    ax.spines['top'].set_visible(False)  # Hide the top spine (upper line)
     
     # Set all text to black
     ax.set_title(title, fontsize=12, color='black')
@@ -74,8 +74,8 @@ create_forest_plot(ax1, full_dataset, 'blue', 'Full dataset (n=412)')
 create_forest_plot(ax2, matched_dataset, 'red', 'Propensity score matched dataset (n=230)')
 
 # Save plot as an image file
-plt.savefig('fig5-1.png', format='png')
-plt.savefig('fig5-1.svg', format='svg')
+plt.savefig('fig5-3.png', format='png')
+plt.savefig('fig5-3.svg', format='svg')
 
 plt.tight_layout()
 plt.show()
