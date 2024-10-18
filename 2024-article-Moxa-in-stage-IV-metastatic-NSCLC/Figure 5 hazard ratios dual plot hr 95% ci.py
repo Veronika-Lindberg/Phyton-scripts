@@ -65,6 +65,9 @@ fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(14, 8), sharex=True)  # Wider figu
 
 create_forest_plot(ax1, full_dataset, 'blue', 'Full dataset (n=412)')
 create_forest_plot(ax2, matched_dataset, 'red', 'Propensity score matched dataset (n=230)')
+# Save plot as an image file
+plt.savefig('fig5.png', format='png')
+plt.savefig('fig5.svg', format='svg')
 
 plt.tight_layout()
 plt.show()

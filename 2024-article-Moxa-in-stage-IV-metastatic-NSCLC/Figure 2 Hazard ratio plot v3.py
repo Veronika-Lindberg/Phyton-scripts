@@ -75,7 +75,7 @@ plt.tick_params(axis='y', which='both', left=False)
 plt.savefig('hazard_ratio_plot2.png', format='png')
 plt.savefig('hazard_ratio_plot2.svg', format='svg')
 
-
+ 
 # Show plot
 plt.gca().invert_yaxis()  # Invert y-axis to have the first characteristic on top
 plt.show()
