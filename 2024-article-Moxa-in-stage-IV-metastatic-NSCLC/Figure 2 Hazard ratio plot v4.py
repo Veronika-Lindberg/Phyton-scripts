@@ -10,20 +10,49 @@ os.chdir(working_dir)
 # Print the current working directory
 print("Current working directory:", os.getcwd())
 
-# Data
+
+
+# Data Sorted by Hazard Ratio (Descending Order)
 characteristics = [
     'TNM Stage 4B',
-    'Sex: Male',
-    'Radiotherapy',
-    'TKI-TT',
-    'CPM',
-    'Moxa 1\u20144 times',
-    'Chemo Cycles >3',
-    'Moxa >4 times'
+    'Sex: Males',
+    'Radiotherapy: Yes',
+    'Number of Chemocycles: >3',
+    'Moxa: 1\u20144 times',
+    'TKI-TT: Any',
+    'Moxa: >4 times'
 ]
-hazard_ratios = [1.49, 1.39, 0.88, 0.81, 0.75, 0.74, 0.67, 0.55]
-ci_lower = [1.16, 1.08, 0.68,0.61,  0.59, 0.58, 0.44, 0.36]
-ci_upper = [1.91, 1.78, 1.13,1.06,  0.96, 0.95, 1.01, 0.82]
+
+hazard_ratios = [
+    1.43,  # TNM Stage 4B
+    1.36,  # Sex: Males
+    0.91,  # Radiotherapy: Yes
+    0.85,  # Number of Chemocycles: 4–6
+    0.80,  # Moxibustion: 1–4 times
+    0.79,  # TKI2 Targeted therapy: Any
+    0.52   # Moxibustion: >4 times
+]
+
+ci_lower = [
+    1.14,  # TNM Stage 4B
+    1.09,  # Sex: Males
+    0.72,  # Radiotherapy: Yes
+    0.59,  # Number of Chemocycles: 4–6
+    0.61,  # Moxibustion: 1–4 times
+    0.63,  # TKI2 Targeted therapy: Any
+    0.37   # Moxibustion: >4 times
+]
+
+ci_upper = [
+    1.79,  # TNM Stage 4B
+    1.69,  # Sex: Males
+    1.15,  # Radiotherapy: Yes
+    1.21,  # Number of Chemocycles: 4–6
+    1.03,  # Moxibustion: 1–4 times
+    0.99,  # TKI2 Targeted therapy: Any
+    0.73   # Moxibustion: >4 times
+]
+
 
 # Convert data to numpy arrays for easier manipulation
 y_pos = np.arange(len(characteristics))
@@ -72,8 +101,8 @@ for i in range(len(characteristics)):
 plt.tick_params(axis='y', which='both', left=False)
 
 # Save plot as an image file
-plt.savefig('hazard_ratio_plot3.png', format='png')
-plt.savefig('hazard_ratio_plot3.svg', format='svg')
+plt.savefig('hazard_ratio_plot4.png', format='png')
+plt.savefig('hazard_ratio_plot4.svg', format='svg')
 
  
 # Show plot
