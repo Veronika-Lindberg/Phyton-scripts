@@ -27,7 +27,7 @@ def create_forest_plot(ax, data, color, title):
             ax.scatter(hr, y, color=color, s=50, marker='o')  # Circle for others
         
         # Move category text outside the graph, on the left
-        ax.text(-0.15, y, f"{label} (n={n})", ha='right', va='center', fontsize=12, color='black', transform=ax.get_yaxis_transform(), bbox=dict(facecolor='white', edgecolor='none', pad=0))
+        ax.text(-0.15, y, f"{label} (N = {n})", ha='right', va='center', fontsize=12, color='black', transform=ax.get_yaxis_transform(), bbox=dict(facecolor='white', edgecolor='none', pad=0))
         ax.text(1.05, y, f"{hr:.2f} ({ci_lower:.2f}-{ci_upper:.2f})", ha='left', va='center', fontsize=12, color='black', transform=ax.get_yaxis_transform(), bbox=dict(facecolor='white', edgecolor='none', pad=0))
     
     # Set up the plot
@@ -57,29 +57,29 @@ full_dataset = [
     ("+ Moxa 1\u20144 times", 151, 0.68, 0.49, 0.94),
     ("+ TKI-TT", 36, 0.56, 0.36, 0.87),
     ("+ TKI-TT + Moxa 1\u20144 times", 88, 0.63, 0.44, 0.90),
-    ("+ Moxa >4 times", 27, 0.40, 0.24, 0.65),
-    ("+ TKI-TT + Moxa >4 times", 29, 0.45, 0.29, 0.72),
-    ("PCB+oral-CHM only", 81, 1.00, 1.00, 1.00)
+    ("+ Moxa > 4 times", 27, 0.40, 0.24, 0.65),
+    ("+ TKI-TT + Moxa > 4 times", 29, 0.45, 0.29, 0.72),
+    ("PBC+oral-CHM only", 81, 1.00, 1.00, 1.00)
 ]
 
 matched_dataset = [
     ("+ Moxa 1\u20144 times", 63, 0.64, 0.43, 0.94),
     ("+ TKI-TT", 35, 0.56, 0.36, 0.87),
     ("+ TKI-TT + Moxa 1\u20144 times", 33, 0.53, 0.34, 0.83),
-    ("+ Moxa >4 times", 12, 0.34, 0.18, 0.63),
-    ("+ TKI-TT + Moxa >4 times", 7, 0.29, 0.15, 0.59),
-    ("PCB+oral-CHM only", 80, 1.00, 1.00, 1.00),
+    ("+ Moxa > 4 times", 12, 0.34, 0.18, 0.63),
+    ("+ TKI-TT + Moxa > 4 times", 7, 0.29, 0.15, 0.59),
+    ("PBC+oral-CHM only", 80, 1.00, 1.00, 1.00),
 ]
 
 # Create the plot with wider dimensions suitable for PowerPoint slide
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(14, 8), sharex=True)  # Wider figure for PowerPoint
 
-create_forest_plot(ax1, full_dataset, 'blue', 'Full dataset (n=412)')
-create_forest_plot(ax2, matched_dataset, 'red', 'Propensity score matched dataset (n=230)')
+create_forest_plot(ax1, full_dataset, 'blue', 'Full dataset (N = 412)')
+create_forest_plot(ax2, matched_dataset, 'red', 'Propensity score matched dataset (N = 230)')
 
 # Save plot as an image file
-plt.savefig('fig5-3.png', format='png')
-plt.savefig('fig5-3.svg', format='svg')
+plt.savefig('fig5-4.png', format='png')
+plt.savefig('fig5-4.svg', format='svg')
 
 plt.tight_layout()
 plt.show()
